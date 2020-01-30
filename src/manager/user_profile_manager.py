@@ -41,4 +41,7 @@ class UserProfileManager:
         return userProfile
 
     def getUserProfile(self, userId):
-        return self.userProfileDict[userId]
+        try:
+            return self.userProfileDict[userId]
+        except:
+            return UserProfile()

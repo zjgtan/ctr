@@ -11,7 +11,6 @@ class AdFeature:
         self.price = 0.
 
 
-
 class AdFeatureManager:
     def __init__(self, dataPath):
         self.adFeatureDict = {}

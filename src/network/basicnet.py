@@ -10,6 +10,7 @@ class BasicNet(nn.Module):
                                           config.dimUserEmb)
         self.adGroupEmbedding = nn.Embedding(config.numAdGroup,
                                              config.dimAdGroupEmb)
+
         self.fc1 = nn.Linear(config.dimAdGroupEmb + config.dimUserEmb, config.dimFc1)
         self.fc2 = nn.Linear(config.dimFc1, 1)
 

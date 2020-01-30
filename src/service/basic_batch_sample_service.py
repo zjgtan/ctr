@@ -16,7 +16,12 @@ class BasicBatchSampleService:
 
     def getSample(self, rawBatchSample):
         basicBatchSample = BasicBatchSample()
-        basicBatchSample.userIds = [sample[0] for sample in rawBatchSample]
-        basicBatchSample.adGroupIds = [sample[1] for sample in rawBatchSample]
-        basicBatchSample.labels = [sample[2] for sample in rawBatchSample]
+        '''
+        basicBatchSample.userIds = [sample.userId for sample in rawBatchSample]
+        basicBatchSample.adGroupIds = [sample.adGroupId for sample in rawBatchSample]
+        basicBatchSample.labels = [sample.label for sample in rawBatchSample]
+        '''
+        basicBatchSample.userIds = [sample.userId for sample in rawBatchSample]
+        basicBatchSample.adGroupIds = [sample.adGroupId for sample in rawBatchSample]
+        basicBatchSample.labels = [sample.label for sample in rawBatchSample]
         return basicBatchSample
