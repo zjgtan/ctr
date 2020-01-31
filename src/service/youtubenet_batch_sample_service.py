@@ -35,7 +35,7 @@ class YoutubeBatchSampleService(BasicBatchSampleService):
         batchSample.brand = [self.adFeatureService.getAdFeature(sample.adGroupId).brand for sample in rawBatchSample]
         batchSample.price = [self.adFeatureService.getAdFeature(sample.adGroupId).price for sample in rawBatchSample]
 
-        batchSample.label = [sample.label for sample in rawBatchSample]
+        batchSample.labels = [sample.label for sample in rawBatchSample]
 
         return batchSample
         

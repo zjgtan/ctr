@@ -60,12 +60,13 @@ class Ctr:
         if self.args.network == "basic":
             batchSampleService = BasicBatchSampleService(rawSampleService, userProfileService, adFeatureService)
             network = BasicNet(BasicNetConfig())
-            network = network.cuda()
         elif self.args.network == "youtubenet":
             batchSampleService = YoutubeBatchSampleService(rawSampleService, userProfileService, adFeatureService)
             network = YoutubeNet(YoutubeNetConfig())
         else:
             raise ValueError("network error")
+
+        network.cuda()
 
         optimizer = torch.optim.Adam(network.parameters(), lr=self.args.lr)
         self.trainer = Trainer(batchSampleService, network, optimizer, traceService, self.args.epoch, self.args.batch_size)

@@ -1,6 +1,6 @@
 class YoutubeNetConfig:
     def __init__(self):
-        self.dimEmb = 3
+        self.dimEmb = 8
 
         self.numUser = 1141729 + 1
         self.numCmsSeg = 97

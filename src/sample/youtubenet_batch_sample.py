@@ -195,21 +195,21 @@ class YoutubeNetBatchSample:
     @price.setter
     def price(self, price):
         if isinstance(price, list):
-            self._price = torch.FloatTensor(price)
+            self._price = torch.FloatTensor([[p] for p in price])
         elif isinstance(price, torch.FloatTensor):
             self._price = price
         else:
             raise ValueError("userIds Type Error")
 
     @property
-    def label(self):
-        return self._label
+    def labels(self):
+        return self._labels
 
-    @label.setter
-    def label(self, label):
-        if isinstance(label, list):
-            self._label = torch.FloatTensor(label)
-        elif isinstance(label, torch.FloatTensor):
-            self._label = label
+    @labels.setter
+    def labels(self, labels):
+        if isinstance(labels, list):
+            self._labels = torch.FloatTensor(labels)
+        elif isinstance(labels, torch.FloatTensor):
+            self._labels = labels
         else:
             raise ValueError("labels Type Error")
